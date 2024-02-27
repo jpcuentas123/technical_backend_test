@@ -1,0 +1,35 @@
+module.exports = {
+  roots: ["<rootDir>/tests", "<rootDir>/src"],
+  moduleNameMapper: {
+    "\\.(css|less|scss|sass)$": "identity-obj-proxy",
+    "single-spa-react/parcel": "single-spa-react/lib/cjs/parcel.cjs",
+    "@config/(.*)": "<rootDir>/src/config/$1",
+    "@controllers/(.*)": "<rootDir>/src/controllers/$1",
+    "@interfaces/(.*)": "<rootDir>/src/interfaces/$1",
+    "@middlewares/(.*)": "<rootDir>/src/middlewares/$1",
+    "@root/(.*)": "<rootDir>/$1",
+    "@routes/(.*)": "<rootDir>/src/routes/$1",
+    "@services/(.*)": "<rootDir>/src/services/$1",
+    "@usecases/(.*)": "<rootDir>/src/usecases/$1",
+    "@utils": ["<rootDir>/src/utils"],
+    "@utils/(.*)": "<rootDir>/src/utils/$1",
+
+    "@shared/(.*)": "<rootDir>/src/v2/shared/$1",
+    "@categories/(.*)": "<rootDir>/src/v2/categories/$1",
+    "@schedules/(.*)": "<rootDir>/src/v2/schedules/$1",
+    "@massiveUpdates/(.*)": "<rootDir>/src/v2/massiveUpdates/$1",
+    "@coupons/(.*)": "<rootDir>/src/v2/coupons/$1",
+  },
+  moduleDirectories: ["node_modules", "src"],
+  moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json"],
+  testMatch: [
+    "<rootDir>/tests/**/*.test.+(ts|tsx|js)",
+    "**/?(*.)+(spec|test).+(ts|tsx|js)",
+  ],
+  transform: {
+    "^.+\\.(ts|tsx)$": "ts-jest",
+  },
+  preset: "ts-jest",
+  testEnvironment: "node",
+  setupFilesAfterEnv: ["<rootDir>/src/utils/setup-jest.ts"],
+};

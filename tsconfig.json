@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.base.json",
+  "include": [
+    "src/**/*.ts",
+    "tests/**/*",
+    "src/utils/setup-jest.js",
+    "src/utils/setup-jest.js"
+  ],
+  "exclude": ["typings/*", "node_modules"],
+  "files": [
+    "./node_modules/@types/node/index.d.ts",
+    "./node_modules/@types/express/index.d.ts",
+    "./node_modules/@types/dotenv/index.d.ts"
+  ]
+}
