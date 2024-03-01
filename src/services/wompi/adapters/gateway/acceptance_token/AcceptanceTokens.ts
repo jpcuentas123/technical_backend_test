@@ -1,19 +1,23 @@
 import axios from 'axios'
-import { PRESIGNED_ACCEPTANCE_TOKEN } from '../../mocks/acceptance_token'
-import { IPresignedAcceptance } from '../../../core/domain/AcceptanceToken'
+import { IPresignedAcceptance } from '@services/wompi/core/domain/AcceptanceToken'
+import config from '@config/config'
 
 const getAcceptanceToken = async (): Promise<{
-  data: IPresignedAcceptance
+  data: string
   status: number
 }> => {
   try {
+    const result = (await axios.get(
+      `${config.W_URL}merchants/${config.W_PUB_TEST}`
+    )) as IPresignedAcceptance
+
     return {
-      data: PRESIGNED_ACCEPTANCE_TOKEN,
+      data: result.data.presigned_acceptance.acceptance_token,
       status: 200,
     }
   } catch (error) {
     console.log(error)
-    throw error
+    return error
   }
 }
 

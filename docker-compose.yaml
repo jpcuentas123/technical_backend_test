@@ -29,7 +29,7 @@ services:
     stdin_open: true
     tty: true
     environment:
-      - DB_HOST=postgresdb
+      - DB_HOST=$DB_HOST
       - DB_USER=$POSTGRESDB_USER
       - DB_PASSWORD=$POSTGRESDB_ROOT_PASSWORD
       - DB_NAME=$POSTGRESDB_DATABASE

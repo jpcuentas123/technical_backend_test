@@ -1,3 +1,5 @@
+import 'module-alias/register'
+import 'dotenv/config'
 import express from 'express'
 import cors from 'cors'
 import * as dotenv from 'dotenv'
@@ -5,12 +7,12 @@ import * as path from 'path'
 import routes from './routes'
 const app = express()
 
-var corsOptions = {
-  origin: 'http://localhost:8081',
-}
+// var corsOptions = {
+//   origin: 'http://localhost:8080',
+// }
 dotenv.config({ path: path.join(__dirname, '../.env') })
 
-app.use(cors(corsOptions))
+// app.use(cors(corsOptions))
 
 app.use(express.json())
 

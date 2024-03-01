@@ -21,7 +21,14 @@
     "esModuleInterop": true,
     "baseUrl": ".",
     "paths": {
-      "@utils/*": ["./src/utils/*"]
+      "@/*": ["./src"],
+      "@utils/*": ["./src/utils/*"],
+      "@config/*": ["./src/config/*"],
+      "@riders/*": ["./src/modules/riders/*"],
+      "@drivers/*": ["./src/modules/drivers/*"],
+      "@middlewares/*": ["./src/middlewares/*"],
+      "@services/*": ["./src/services/*"],
+      "@shared/*": ["./src/modules/shared/*"]
     }
   }
 }
