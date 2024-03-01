@@ -1,7 +1,7 @@
 {
-  "name": "wompi_test",
+  "name": "technical_test",
   "version": "1.0.0",
-  "description": "Wompi Back End Dev Test",
+  "description": "Technical Back End Dev Test",
   "main": "index.js",
   "author": "Jorge Pérez Cuentas",
   "license": "ISC",

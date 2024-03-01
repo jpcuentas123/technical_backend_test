@@ -2,7 +2,7 @@ import express from 'express'
 import cors from 'cors'
 import * as dotenv from 'dotenv'
 import * as path from 'path'
-
+import routes from './routes'
 const app = express()
 
 var corsOptions = {
@@ -19,6 +19,8 @@ app.use(express.urlencoded({ extended: true }))
 app.get('/', (req, res) => {
   res.json({ message: 'Wompi API Test' })
 })
+
+app.use('/api/v1/', ...routes)
 
 const PORT = process.env.NODE_DOCKER_PORT || 8080
 app.listen(PORT, () => {
