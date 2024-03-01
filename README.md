@@ -45,5 +45,6 @@ docker-compose up -d
 +--------+-------------------------+
   GET    | /api/v1/
   GET    | /api/v1/acceptance_token
+  POST   | /api/v1/payment_source
 +--------+-------------------------+
 ```
