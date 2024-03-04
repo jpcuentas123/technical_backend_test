@@ -4,5 +4,6 @@ CREATE TABLE users (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     user_type VARCHAR(100) NOT NULL,
+    user_status VARCHAR(100) NOT NULL,
     PRIMARY KEY (id)
 );

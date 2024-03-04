@@ -6,6 +6,7 @@ CREATE TABLE rides (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     user_id VARCHAR(255) NOT NULL,
+    driver_id VARCHAR(255),
     payment_source VARCHAR(255) NOT NULL,
     PRIMARY KEY (id)
 )

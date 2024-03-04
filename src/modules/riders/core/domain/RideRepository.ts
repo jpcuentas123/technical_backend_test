@@ -8,6 +8,13 @@ export type TRideRepository = {
     status: HttpStatusCode
   }>
   updateRide: (rideStatus: ERideStatus, id: string) => Promise<any>
+  updateRideDriver: (
+    ride_id: string,
+    driver_id: string
+  ) => Promise<{
+    data: IRides
+    status: HttpStatusCode
+  }>
   createTransaction: (transaction: TTransactionToCreate) => Promise<{
     data: ITransactions
     status: HttpStatusCode

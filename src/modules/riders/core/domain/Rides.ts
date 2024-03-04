@@ -19,4 +19,5 @@ export interface IRides {
   created_at: string
   updated_at: string
   user_id: string
+  driver_id: string
 }

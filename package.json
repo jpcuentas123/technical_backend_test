@@ -42,6 +42,7 @@
     "@config": "dist/config",
     "@riders": "dist/modules/riders",
     "@drivers": "dist/modules/drivers",
+    "@users": "dist/modules/users",
     "@middlewares": "dist/middlewares",
     "@services": "dist/services",
     "@shared": "dist/modules/shared"

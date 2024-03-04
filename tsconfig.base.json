@@ -26,6 +26,7 @@
       "@config/*": ["./src/config/*"],
       "@riders/*": ["./src/modules/riders/*"],
       "@drivers/*": ["./src/modules/drivers/*"],
+      "@users/*": ["./src/modules/users/*"],
       "@middlewares/*": ["./src/middlewares/*"],
       "@services/*": ["./src/services/*"],
       "@shared/*": ["./src/modules/shared/*"]
