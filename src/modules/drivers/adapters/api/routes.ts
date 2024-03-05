@@ -3,8 +3,6 @@ import * as controllers from './controllers/'
 
 const router: Router = Router()
 
-router
-  .route('/riders')
-  .post(controllers.createRide.validator, controllers.createRide.controller)
+router.route('/driver/ride/:ride_id').put(controllers.finishRideController)
 
 export default router

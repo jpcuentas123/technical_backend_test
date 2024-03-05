@@ -1,4 +1,5 @@
 import config from '@config/config'
+import { DB } from '@shared/core/domain/PsqlDb'
 import { Pool, PoolConfig } from 'pg'
 
 const dbConfig: PoolConfig = {
@@ -21,16 +22,11 @@ const query = async (statement: any): Promise<any> => {
   return rows
 }
 
-export interface DB {
-  create: (statement: any) => Promise<any>
-  update: (statement: any) => Promise<any>
-  remove: (statement: any) => Promise<any>
-  list: (statement: any) => Promise<any[]>
-}
-
-export const psqlDB: DB = {
+const psqlDB: DB = {
   create: query,
   update: query,
   remove: query,
   list: query,
 }
+
+export default psqlDB

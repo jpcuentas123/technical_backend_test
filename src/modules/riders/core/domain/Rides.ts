@@ -21,3 +21,5 @@ export interface IRides {
   user_id: string
   driver_id: string
 }
+
+export type TCreateRide = Pick<IRides, 'from_location' | 'user_id'>

@@ -1,6 +1,6 @@
 import { QueryConfig } from 'pg'
 import { IRides } from './../../../core/domain/Rides'
-import { psqlDB } from '@shared/adapters/gateways/db'
+import psqlDB from '@shared/adapters/gateways/db'
 import { HttpStatusCode } from 'axios'
 
 export const updateRideDriver = async (

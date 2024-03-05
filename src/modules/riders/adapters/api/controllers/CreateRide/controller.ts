@@ -3,22 +3,23 @@ import { Request, Response } from 'express'
 import * as rideRepository from '@riders/adapters/repositories/'
 import * as wRepository from '@services/wompi/adapters/gateway'
 import * as userRepository from '@users/adapters/repositories/'
+import * as transactionsRepository from '@transactions/adapters/repositories/'
 
 import * as rideUseCases from '@riders/core/application/'
 import * as driversUseCases from '@drivers/core/application/'
-import { IRides } from '@riders/core/domain/Rides'
+import { TLocationDetails } from '@riders/core/domain/Rides'
 
-export const createRide = async (
-  req: Request<any, any, IRides>,
+export const createRideController = async (
+  req: Request<any, any, TLocationDetails>,
   res: Response
 ) => {
   try {
-    // TODO: check this data with zod
-    const ride = req.body
+    const location = req.body
 
     const rideResult = await rideUseCases.createRide(
       rideRepository,
-      ride,
+      transactionsRepository,
+      location,
       wRepository
     )
 

@@ -1,22 +1,17 @@
 import { HttpStatusCode } from 'axios'
-import { ERideStatus, IRides } from './Rides'
-import { ITransactions, TTransactionToCreate } from './Transactions'
+import { ERideStatus, IRides, TCreateRide } from './Rides'
 
 export type TRideRepository = {
-  createRide: (ride: IRides) => Promise<{
+  createRide: (ride: TCreateRide) => Promise<{
     data: IRides
     status: HttpStatusCode
   }>
-  updateRide: (rideStatus: ERideStatus, id: string) => Promise<any>
+  updateRideStatus: (rideStatus: ERideStatus, id: string) => Promise<any>
   updateRideDriver: (
     ride_id: string,
     driver_id: string
   ) => Promise<{
     data: IRides
-    status: HttpStatusCode
-  }>
-  createTransaction: (transaction: TTransactionToCreate) => Promise<{
-    data: ITransactions
     status: HttpStatusCode
   }>
 }

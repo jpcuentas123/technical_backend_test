@@ -23,9 +23,11 @@
     "paths": {
       "@/*": ["./src"],
       "@utils/*": ["./src/utils/*"],
+      "@root/*": ["./*"],
       "@config/*": ["./src/config/*"],
       "@riders/*": ["./src/modules/riders/*"],
       "@drivers/*": ["./src/modules/drivers/*"],
+      "@transactions/*": ["./src/modules/transactions/*"],
       "@users/*": ["./src/modules/users/*"],
       "@middlewares/*": ["./src/middlewares/*"],
       "@services/*": ["./src/services/*"],

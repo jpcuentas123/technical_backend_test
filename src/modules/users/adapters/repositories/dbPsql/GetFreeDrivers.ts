@@ -1,5 +1,5 @@
 import { QueryConfig } from 'pg'
-import { psqlDB } from '@shared/adapters/gateways/db'
+import psqlDB from '@shared/adapters/gateways/db'
 import { HttpStatusCode } from 'axios'
 import { IUser } from 'src/modules/users/core/domain/User'
 

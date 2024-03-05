@@ -1,30 +1,23 @@
 import { HttpStatusCode } from 'axios'
-import { ERideStatus, IRides } from './../../../core/domain/Rides'
-import { psqlDB } from '@shared/adapters/gateways/db'
+import { ERideStatus, IRides, TCreateRide } from '@riders/core/domain/Rides'
+import psqlDB from '@shared/adapters/gateways/db'
 
 export const createRide = async (
-  ride: IRides
+  ride: TCreateRide
 ): Promise<{
   data: IRides
   status: HttpStatusCode
 }> => {
-  const { from_location, to_location, user_id, payment_source } = ride
+  const { from_location, user_id } = ride
   const rideStatus = ERideStatus.IDLE
   const from_locationString = JSON.stringify(from_location)
-  const to_locationString = JSON.stringify(to_location)
 
   const query = {
     text: `
-          INSERT INTO rides ("from_location", "to_location", "ride_status", "user_id", "payment_source")
-          VALUES ($1, $2, $3, $4, $5) RETURNING *;
+          INSERT INTO rides ("from_location", "ride_status", "user_id")
+          VALUES ($1, $2, $3) RETURNING *;
         `,
-    values: [
-      from_locationString,
-      to_locationString,
-      rideStatus,
-      user_id,
-      payment_source,
-    ],
+    values: [from_locationString, rideStatus, user_id],
   }
 
   const createdRide = await psqlDB.create(query)

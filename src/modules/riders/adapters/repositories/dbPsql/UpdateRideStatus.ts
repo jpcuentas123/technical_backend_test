@@ -1,9 +1,9 @@
 import { QueryConfig } from 'pg'
 import { ERideStatus, IRides } from './../../../core/domain/Rides'
-import { psqlDB } from '@shared/adapters/gateways/db'
+import psqlDB from '@shared/adapters/gateways/db'
 import { HttpStatusCode } from 'axios'
 
-export const updateRide = async (
+export const updateRideStatus = async (
   rideStatus: ERideStatus,
   id
 ): Promise<{

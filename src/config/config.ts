@@ -8,6 +8,10 @@ const config = {
   W_PRIV_TEST: process.env.W_PRIV_TEST,
   PORT: 5432,
   CONNECTION_TIMEOUT: 30000,
+  USER_ID: '74b9b862-cbbc-419c-9db2-3355056f737f',
+  API: {
+    URL: 'http://localhost:6868',
+  },
 }
 
 export default config

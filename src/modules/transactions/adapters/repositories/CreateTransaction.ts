@@ -2,8 +2,8 @@ import {
   ETransactionStatus,
   ITransactions,
   TTransactionToCreate,
-} from '@riders/core/domain/Transactions'
-import { psqlDB } from '@shared/adapters/gateways/db'
+} from '@transactions/core/domain/Transactions'
+import psqlDB from '@shared/adapters/gateways/db'
 import { HttpStatusCode } from 'axios'
 
 export const createTransaction = async (
