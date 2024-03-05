@@ -3,12 +3,16 @@ import { DB } from '@shared/core/domain/PsqlDb'
 import { Pool, PoolConfig } from 'pg'
 
 const dbConfig: PoolConfig = {
-  user: config.DB_USER,
-  password: config.DB_PASSWORD,
-  host: config.DB_HOST,
-  database: config.DB_NAME,
-  port: config.PORT,
+  // user: config.DB_USER,
+  // password: config.DB_PASSWORD,
+  // host: config.DB_HOST,
+  // database: config.DB_NAME,
+  // port: config.PORT,
+  connectionString: config.DB_URL,
   connectionTimeoutMillis: config.CONNECTION_TIMEOUT,
+  ssl: {
+    rejectUnauthorized: false,
+  },
 }
 
 const pool = new Pool(dbConfig)

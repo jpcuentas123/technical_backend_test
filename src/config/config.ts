@@ -1,4 +1,5 @@
 const config = {
+  DB_URL: process.env.DATABASE_URL,
   DB_USER: process.env.POSTGRESDB_USER,
   DB_PASSWORD: process.env.POSTGRESDB_ROOT_PASSWORD,
   DB_HOST: process.env.DB_HOST,
