@@ -6,7 +6,13 @@ export type TRideRepository = {
     data: IRides
     status: HttpStatusCode
   }>
-  updateRideStatus: (rideStatus: ERideStatus, id: string) => Promise<any>
+  updateRideStatus: (
+    rideStatus: ERideStatus,
+    id: string
+  ) => Promise<{
+    data: IRides
+    status: HttpStatusCode
+  }>
   updateRideDriver: (
     ride_id: string,
     driver_id: string
