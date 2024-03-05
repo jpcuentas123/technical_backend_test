@@ -36,7 +36,16 @@ docker-compose up
 docker-compose up -d
 ```
 
+# Tests
+
+```
+# Run tests
+npm run test
+```
+
 # List of Routes
+
+Full documentation [here](https://app.swaggerhub.com/apis-docs/JPCUENTAS123/technical_test/1.0.0) 
 
 ```sh
 # API Routes:
@@ -47,5 +56,6 @@ docker-compose up -d
   GET    | /api/v1/acceptance_token
   POST   | /api/v1/payment_source
   POST   | /api/v1/riders
+  POST   | /api/v1/driver
 +--------+-------------------------+
 ```
