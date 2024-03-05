@@ -17,10 +17,13 @@ app.use(express.json())
 
 app.use(express.urlencoded({ extended: true }))
 
-app.get('/', (req, res) => {
-  res.json({ message: 'Wompi API Test' })
-})
+app.get('/', (req, res) => {})
 
-app.use('/api/v1/', ...routes)
+app.use('/api/v1/', [
+  async (req, res) => {
+    res.json({ message: 'Wompi API Test' })
+  },
+  ...routes,
+])
 
 export default app
