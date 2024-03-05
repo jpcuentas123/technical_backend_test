@@ -25,7 +25,7 @@ export const updateTransaction = async (
   const createdTransaction = await psqlDB.create(query)
 
   return {
-    data: createdTransaction,
-    status: HttpStatusCode.Created,
+    data: createdTransaction[0],
+    status: HttpStatusCode.Ok,
   }
 }

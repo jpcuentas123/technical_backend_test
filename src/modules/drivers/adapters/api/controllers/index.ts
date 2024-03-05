@@ -1,1 +1,1 @@
-export * from './finishRide'
+export * from './FinishRide/'

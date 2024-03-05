@@ -3,7 +3,6 @@ import { ERideStatus } from '@riders/core/domain/Rides'
 import { TTransactionRepository } from '@root/src/modules/transactions/core/domain/TransactionRepository'
 import calculateDistance from '@utils/calculateDistance'
 import getAmountInCents from '@utils/getAmountInCents'
-import { HttpStatusCode } from 'axios'
 
 const calculateRidePrice = (initialLocation, finalLocation, minutes) => {
   const COST_PER_KM = 1000
@@ -23,16 +22,29 @@ export const finishRide = async (
   finalLocation,
   minutes
 ) => {
-  const rideResult = await rideRepo.updateRideStatus(
-    ERideStatus.FINISHED,
-    rideId
-  )
-  const amount = calculateRidePrice(
-    rideResult.data.from_location,
-    finalLocation,
-    minutes
-  )
+  try {
+    const rideResult = await rideRepo.updateRideStatus(
+      ERideStatus.FINISHED,
+      rideId
+    )
 
-  const transactionResult = transactionsRepo.updateTransaction()
-  return rideResult
+    const amount = calculateRidePrice(
+      rideResult.data.from_location,
+      finalLocation,
+      minutes
+    )
+    const transaction = await transactionsRepo.getTransactionByRideId(
+      rideResult.data.id
+    )
+    const transactionResult = await transactionsRepo.updateTransaction(
+      transaction.data.id,
+      amount
+    )
+    return {
+      ride: rideResult,
+      transaction: transactionResult,
+    }
+  } catch (e) {
+    throw e
+  }
 }

@@ -21,7 +21,7 @@ export const updateRideStatus = async (
   const updatedRide = await psqlDB.create(query)
 
   return {
-    data: updatedRide,
+    data: updatedRide[0],
     status: HttpStatusCode.Ok,
   }
 }

@@ -6,6 +6,10 @@ export type TTransactionRepository = {
     data: ITransactions
     status: HttpStatusCode
   }>
+  getTransactionByRideId: (rideId: string) => Promise<{
+    data: ITransactions
+    status: HttpStatusCode
+  }>
   updateTransaction: (
     transaction_id: string,
     amount: number
