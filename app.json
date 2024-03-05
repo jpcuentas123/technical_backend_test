@@ -1,0 +1,12 @@
+{
+    "name": "Start on Heroku: Node.js",
+    "description": "Technical backend test",
+    "repository": "https://github.com/jpcuentas123/technical_backend_test",
+    "logo": "",
+    "keywords": [
+        "node",
+        "express",
+        "heroku"
+    ],
+    "image": "heroku/nodejs"
+}
